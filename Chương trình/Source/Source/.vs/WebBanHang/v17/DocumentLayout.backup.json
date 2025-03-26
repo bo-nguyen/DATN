@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DATN\\Source\\Source\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B647A64D-E81E-4CC1-B26B-C4A433D30EDD}|WebBanHang\\WebBanHang.csproj|d:\\datn\\source\\source\\webbanhang\\webbanhang.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B647A64D-E81E-4CC1-B26B-C4A433D30EDD}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\webbanhang.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WebBanHang.csproj",
+              "DocumentMoniker": "D:\\DATN\\Source\\Source\\WebBanHang\\WebBanHang.csproj",
+              "RelativeDocumentMoniker": "WebBanHang\\WebBanHang.csproj",
+              "ToolTip": "D:\\DATN\\Source\\Source\\WebBanHang\\WebBanHang.csproj",
+              "RelativeToolTip": "WebBanHang\\WebBanHang.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-25T03:02:15.659Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
