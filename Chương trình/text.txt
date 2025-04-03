@@ -1,0 +1,274 @@
+USE [NoiThatCore]
+GO
+/****** Object:  Table [dbo].[ChiTietDonHang]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChiTietDonHang](
+	[MaDH] [int] NOT NULL,
+	[MaSP] [int] NOT NULL,
+	[GiaBan] [int] NULL,
+	[GiaGiam] [int] NULL,
+	[SoLuong] [int] NULL,
+	[TongTien] [int] NULL,
+ CONSTRAINT [PK_ChiTietDonHang] PRIMARY KEY CLUSTERED 
+(
+	[MaDH] ASC,
+	[MaSP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DanhGiaSanPham]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DanhGiaSanPham](
+	[MaDG] [int] IDENTITY(1,1) NOT NULL,
+	[MaKH] [int] NULL,
+	[MaSP] [int] NULL,
+	[Diem] [tinyint] NULL,
+	[NoiDung] [nvarchar](500) NULL,
+	[ThoiGian] [datetime] NULL,
+ CONSTRAINT [PK_DanhGiaSanPham] PRIMARY KEY CLUSTERED 
+(
+	[MaDG] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DonHang]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DonHang](
+	[MaDH] [int] IDENTITY(1,1) NOT NULL,
+	[HoTen] [nvarchar](250) NULL,
+	[SDT] [char](10) NULL,
+	[NgayDat] [datetime] NULL,
+	[NgayShip] [datetime] NULL,
+	[TienShip] [int] NULL,
+	[GiamGiaShip] [int] NULL,
+	[GiamGia] [int] NULL,
+	[TongTien] [int] NULL,
+	[PhuongThucThanhToan] [nvarchar](250) NULL,
+	[DiaChi] [nvarchar](500) NULL,
+	[Matp] [varchar](5) NULL,
+	[Maqh] [varchar](5) NULL,
+	[Maxa] [varchar](5) NULL,
+	[MaTT] [int] NULL,
+	[MaKH] [int] NULL,
+	[MaShipper] [int] NULL,
+	[MaKM] [int] NULL,
+ CONSTRAINT [PK_DonHang] PRIMARY KEY CLUSTERED 
+(
+	[MaDH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KhachHang]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KhachHang](
+	[MaKH] [int] IDENTITY(1,1) NOT NULL,
+	[TenKH] [nvarchar](250) NULL,
+	[Email] [varchar](100) NULL,
+	[SDT] [char](10) NULL,
+	[MatKhau] [nvarchar](50) NULL,
+	[Khoa] [bit] NULL,
+	[Salt] [nvarchar](50) NULL,
+	[DiaChi] [nvarchar](500) NULL,
+	[Matp] [varchar](5) NULL,
+	[Maqh] [varchar](5) NULL,
+	[Maxa] [varchar](5) NULL,
+ CONSTRAINT [PK_KhachHang] PRIMARY KEY CLUSTERED 
+(
+	[MaKH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[KhuyenMai]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[KhuyenMai](
+	[MaKM] [int] IDENTITY(1,1) NOT NULL,
+	[MoTa] [nvarchar](250) NULL,
+	[MaNhap] [nvarchar](50) NULL,
+	[SoLuong] [int] NULL,
+	[GiaTriToiThieu] [int] NULL,
+	[GiaTriGiam] [int] NULL,
+	[NgayBatDau] [datetime] NULL,
+	[NgayKetThuc] [datetime] NULL,
+ CONSTRAINT [PK_KhuyenMai] PRIMARY KEY CLUSTERED 
+(
+	[MaKM] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[LoaiSanPham]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[LoaiSanPham](
+	[MaLoai] [int] IDENTITY(1,1) NOT NULL,
+	[TenLoai] [nvarchar](250) NULL,
+	[MoTa] [nvarchar](250) NULL,
+ CONSTRAINT [PK_LOAISANPHAM] PRIMARY KEY CLUSTERED 
+(
+	[MaLoai] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[QuanHuyen]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[QuanHuyen](
+	[Maqh] [varchar](5) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Type] [nvarchar](30) NOT NULL,
+	[Matp] [varchar](5) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Maqh] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[QuanTriVien]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[QuanTriVien](
+	[MaQTV] [int] IDENTITY(1,1) NOT NULL,
+	[TenQTV] [nvarchar](250) NULL,
+	[Email] [varchar](100) NULL,
+	[SDT] [char](10) NULL,
+	[MatKhau] [nvarchar](50) NULL,
+	[Salt] [nvarchar](50) NULL,
+	[Khoa] [bit] NULL,
+ CONSTRAINT [PK_QuanTriVien] PRIMARY KEY CLUSTERED 
+(
+	[MaQTV] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SanPham]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SanPham](
+	[MaSP] [int] IDENTITY(1,1) NOT NULL,
+	[TenSP] [nvarchar](250) NULL,
+	[GiaBan] [int] NULL,
+	[GiaGiam] [int] NULL,
+	[SoLuongCo] [int] NULL,
+	[Anh] [nvarchar](250) NULL,
+	[CongSuat] [int] NULL,
+	[KhoiLuong] [float] NULL,
+	[MoTa] [nvarchar](500) NULL,
+	[BaoHanh] [nvarchar](50) NULL,
+	[Khoa] [bit] NULL,
+	[MaLoai] [int] NULL,
+	[MaTH] [int] NULL,
+ CONSTRAINT [PK_SanPham] PRIMARY KEY CLUSTERED 
+(
+	[MaSP] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Shipper]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Shipper](
+	[MaShipper] [int] IDENTITY(1,1) NOT NULL,
+	[TenShipper] [nvarchar](250) NULL,
+	[TenHT] [nvarchar](500) NULL,
+	[Email] [varchar](100) NULL,
+	[SDT] [char](10) NULL,
+	[MatKhau] [nvarchar](50) NULL,
+	[LoaiXe] [nvarchar](50) NULL,
+	[BienSo] [nvarchar](12) NULL,
+	[Salt] [nvarchar](50) NULL,
+	[Khoa] [bit] NULL,
+ CONSTRAINT [PK_Shipper] PRIMARY KEY CLUSTERED 
+(
+	[MaShipper] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[ThuongHieu]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ThuongHieu](
+	[MaTH] [int] IDENTITY(1,1) NOT NULL,
+	[TenTH] [nvarchar](250) NULL,
+	[MoTa] [nvarchar](250) NULL,
+ CONSTRAINT [PK_ThuongHieu] PRIMARY KEY CLUSTERED 
+(
+	[MaTH] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TinhThanhPho]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TinhThanhPho](
+	[Matp] [varchar](5) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Type] [nvarchar](30) NOT NULL,
+	[Slug] [varchar](30) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Matp] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TrangThaiDonHang]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TrangThaiDonHang](
+	[MaTT] [int] NOT NULL,
+	[TenTT] [nvarchar](100) NULL,
+	[MoTa] [nvarchar](250) NULL,
+ CONSTRAINT [PK_TrangThaiDonHang] PRIMARY KEY CLUSTERED 
+(
+	[MaTT] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[XaPhuongThiTran]    Script Date: 3/25/2025 9:41:57 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[XaPhuongThiTran](
+	[Maxa] [varchar](5) NOT NULL,
+	[Name] [nvarchar](100) NOT NULL,
+	[Type] [nvarchar](30) NOT NULL,
+	[Maqh] [varchar](5) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Maxa] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[ChiTietDonHang] ([MaDH], [MaSP], [GiaBan], [GiaGiam], [SoLuong], [TongTien]) VALUES (41, 37, 4200000, 4000000, 2, 8000000)
+GO
+SET IDENTITY_INSERT [dbo].[DonHang] ON 

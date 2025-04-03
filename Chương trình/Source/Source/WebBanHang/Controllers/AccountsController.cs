@@ -282,10 +282,10 @@ namespace WebBanHang.Controllers
             catch
             {
                 _notyfService.Warning("Cập nhật không thành công");
-                return RedirectToAction("Dashboard", "Account");
+                return RedirectToAction("Dashboard", "Accounts");
             }
             _notyfService.Warning("Cập nhật không thành công");
-            return RedirectToAction("Dashboard", "Account");
+            return RedirectToAction("Dashboard", "Accounts");
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZDY5PdeKokg=",
+  "dgSpecHash": "gjKk6NabYCI=",
   "success": true,
-  "projectFilePath": "D:\\DATN\\Source\\Source\\WebBanHang\\WebBanHang.csproj",
+  "projectFilePath": "D:\\DATN\\Chương trình\\Source\\Source\\WebBanHang\\WebBanHang.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bongu\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\bongu\\.nuget\\packages\\dinktopdf\\1.0.8\\dinktopdf.1.0.8.nupkg.sha512",
